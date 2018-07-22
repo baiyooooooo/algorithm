@@ -1,11 +1,16 @@
 package com.bybo.entrance;
 
 import com.bybo.search.BinarySearch;
+import com.bybo.string.ArrangingCombination;
 
 public class MainApp {
 	
 	public static void main(String[] args) {
-		testBinarySearch();
+//		testBinarySearch();
+		System.out.println(ArrangingCombination.combine("bybo").size());
+		ArrangingCombination.combine("bybo").forEach(str -> {
+			System.out.println(str);
+		});
 	}
 	public static void testBinarySearch() {
 		int[][] sources = {{1,5,7,8,10,15,50},
