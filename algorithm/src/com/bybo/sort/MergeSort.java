@@ -28,19 +28,18 @@ public class MergeSort {
 	}
 	
 	private static void merge(int arr[], int low, int pivot, int high) {
-		System.out.println(low + " " + pivot + " " + high);
 		int[] tmp = new int[arr.length];
 		int start = low;
 		int mid = pivot + 1;
 		int tmpIndex = low;
-		while(start <= pivot && mid <= high) {
+		while(low <= pivot && mid <= high) {
 			if(arr[low] <= arr[mid]) {
 				tmp[start++] = arr[low++];
 			} else {
 				tmp[start++] = arr[mid++];
 			}
 		}
-		while(start <= pivot) {
+		while(low <= pivot) {
 			tmp[start++] = arr[low++];
 		}
 		while(mid <= high) {
