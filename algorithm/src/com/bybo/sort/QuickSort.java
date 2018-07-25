@@ -10,7 +10,7 @@ public class QuickSort {
 		System.out.println("Before quick sort with Recursive...");
 		Print.printArray(arr);
 		long startTime = System.currentTimeMillis();
-		quickSortRecursive(arr, 0, arr.length - 1);
+		QuickSort.quickSortRecursive(arr, 0, arr.length - 1);
 		System.out.println("Recursive spends " + ( System.currentTimeMillis() - startTime ));
 		System.out.println("After quick sort with Recursive...");
 		Print.printArray(arr);
@@ -20,7 +20,7 @@ public class QuickSort {
 		System.out.println("Before quick sort with Stack...");
 		Print.printArray(arr);
 		long startTime = System.currentTimeMillis();
-		quickSortNoRecursive(arr, 0, arr.length - 1);
+		QuickSort.quickSortNoRecursive(arr, 0, arr.length - 1);
 		System.out.println("Stack spends " + ( System.currentTimeMillis() - startTime ));
 		System.out.println("After quick sort with Stack...");
 		Print.printArray(arr);
