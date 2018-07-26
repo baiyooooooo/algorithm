@@ -11,36 +11,39 @@ public class MergeSort {
 		
 		long startTime = System.currentTimeMillis();
 
-		MergeSort.sort(arr, 0, arr.length - 1);
+		MergeSort.sort(arr);
 		
 		System.out.println("Merge sort spends " + ( System.currentTimeMillis() - startTime ));
 		System.out.println("After merge sort...");
 		Print.printArray(arr);
 	}
+	
+	private static void sort(int[] arr){
+		int[] tmp = new int[arr.length];
+		MergeSort.sort(arr, 0, arr.length - 1, tmp);
+	}
 		
-	private static void sort(int arr[], int low, int high) {
+	private static void sort(int[] arr, int low, int high, int[] tmp) {
 		if(low < high) {
 			int pivot = (low + high) / 2;
-			MergeSort.sort(arr, low, pivot);
-			MergeSort.sort(arr, pivot + 1, high);
-			MergeSort.merge(arr, low, pivot, high);
+			MergeSort.sort(arr, low, pivot, tmp);
+			MergeSort.sort(arr, pivot + 1, high, tmp);
+			MergeSort.merge(arr, low, pivot, high, tmp);
 		}
 	}
 	
-	private static void merge(int arr[], int low, int pivot, int high) {
-		System.out.println(low + " " + pivot + " " + high);
-		int[] tmp = new int[arr.length];
+	private static void merge(int arr[], int low, int pivot, int high, int[] tmp) {
 		int start = low;
 		int mid = pivot + 1;
 		int tmpIndex = low;
-		while(start <= pivot && mid <= high) {
+		while(low <= pivot && mid <= high) {
 			if(arr[low] <= arr[mid]) {
 				tmp[start++] = arr[low++];
 			} else {
 				tmp[start++] = arr[mid++];
 			}
 		}
-		while(start <= pivot) {
+		while(low <= pivot) {
 			tmp[start++] = arr[low++];
 		}
 		while(mid <= high) {
