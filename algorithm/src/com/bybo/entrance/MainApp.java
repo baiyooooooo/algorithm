@@ -3,11 +3,12 @@ package com.bybo.entrance;
 import com.bybo.search.BinarySearch;
 import com.bybo.sort.MergeSort;
 import com.bybo.sort.QuickSort;
+import com.bybo.util.SubSet;
 
 public class MainApp {
 
 	public static void main(String[] args) {
-		testMergeSort();
+		SubSet.getSubSet(new int[] {1, 2, 5, 6});
 	}
 
 	public static void testBinarySearch() {

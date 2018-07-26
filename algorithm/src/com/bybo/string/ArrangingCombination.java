@@ -12,11 +12,11 @@ public class ArrangingCombination {
 			results.add(source);
 			return results;
 		}
-		// Remove Duplicate
 		for(int i = 0; i < sourceLength; i++){
 			char ch = source.charAt(i);
 			String subString = ArrangingCombination.StringRemoveOneChar(source, i);
 			ArrayList<String> newResult = combine(subString);
+			// Remove Duplicate
 			for (int j = 0; j < newResult.size(); j++) {
 				String tmp = ch + newResult.get(j);
 				if(!results.contains(tmp)){
