@@ -1,0 +1,14 @@
+public class HannoTower {
+    static public void move(int layer, String towerA, String towerB, String towerC){
+        if(layer == 1){
+            System.out.println(towerA + " move to " + towerC);
+        } else {
+            // move A -> B first, B is a middle status
+            move(n - 1, towerA, towerC, towerB);
+            // after move A -> B, move next A to C.
+            move(1, towerA, towerB, towerC);
+            // after move two As to B, and C, move first A(currently in B) to C
+            move(n - 1, towerB, towerA, towerC);
+        }
+    }
+}
